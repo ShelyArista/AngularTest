@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="soal2">
+  <head>
+    <title>Angular Test 2</title>
+    <script src="angular.min.js"></script>
+    <script src="script2.js"></script> 
+  </head>
+  <body>
+    <div ng-controller="inputan">
+      <input type="number" ng-model="uang"/>
+      <h3>{{ uang | currency:"IDR ":2 }}</h3>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="soal3">
+  <head>
+    <title>Angular Test 3</title>
+    <script src="angular.min.js"></script>
+    <script src="script3.js"></script> 
+  </head>
+  <body>
+    <div ng-controller="menu">
+		<ul>
+      <li ng-repeat="data in list track by $index">
+        <span>{{ $index+1 }} . {{data}}</span>        
+      </li>
+    </ul>
+    </div>
+  </body>
+</html>

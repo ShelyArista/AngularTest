@@ -1,9 +1,16 @@
-var sismiop = angular.module('sismiop',[]);
+var sismiop = angular.module('sismiop',['ngCookies']);
 
-sismiop.controller('menu', ['$scope', function($scope) {
-  $scope.kasus = 'lupa';
-  $scope.namaUser ='';
-}]);
+sismiop.controller('menu', ['$scope', '$cookieStore', function($scope, $cookieStore) {
+  $scope.kasus = 'ingat';
+  $scope.uang = 0;
+  console.log($cookieStore.get('val'));
+  $scope.saveCookie = function(){
+  	$cookieStore.put('val','TERISI');
+  }
+  $scope.removeCookie = function () {
+  	$cookieStore.remove('val');
+  }
+}])
 sismiop.controller('inputan', ['$scope', function($scope) {
   $scope.inputStatis = 'shely';
   $scope.inputSelect = '0';
@@ -16,6 +23,15 @@ sismiop.controller('inputan', ['$scope', function($scope) {
   	'5': 'Pina Colada',
   };
   $scope.dataSelectionKeys = Object.keys($scope.dataSelection)
+  $scope.inputCheckbox = false;
+  
+  $scope.inputNumber = 0;
+  $scope.tanggalJadi = new Date();
+  $scope.inputTime = new Date();
+
+  $scope.inputPaste = false;
+  $scope.inputCut = false;  
+  $scope.inputCopy = false;
 }]);
 sismiop.controller('submenu', ['$scope', '$http', function($scope, $http) {
   $scope.kasus = 'lupa';

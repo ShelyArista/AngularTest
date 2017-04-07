@@ -3,11 +3,18 @@
   <head>
     <title>Angular Test</title>
     <script src="angular.min.js"></script>
+    <script src="angular-cookies.js"></script>
     <script src="jquery.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js"></script> 
   </head>
   <body>
     <div ng-controller="menu">
+      <input type="number" ng-model="uang"/>
+      {{ uang | currency:"IDR ":2 }}
+      <button type="button" ng-click="saveCookie()">SAVE COOKIE</button>
+      <button type="button" ng-click="removeCookie()">REMOVE COOKIE</button>
+    </div>
+<!--
       <label>Nama:</label>
       <input type="text" ng-model="namaUser" placeholder="Masukkan nama disini">
       <hr>
@@ -17,9 +24,6 @@
       	<span>{{namaUser}}</span>
       	</div>
       </div>
-    </div>
-    <div>
-    	<ng-include src="'inputan.html'" scope="" onload=""></ng-include>
-    </div>
+    </div>-->
   </body>
 </html>
